@@ -116,7 +116,7 @@ const UpdateEntry = () => {
 
       }}>
 
-        <TextField id='title' label='New Title' variant='outlined' sx={{ width: '92%', marginTop: 3 }} error={isTitleError()} helperText={"Current title: " + state.title} onChange={e => setTitle(e.target.value)} />
+        <TextField id='title' label='New Title' variant='outlined' sx={{ width: '92%', marginTop: 3 }} error={false} helperText={"Current title: " + state.title} onChange={e => setTitle(e.target.value)} />
         <TextField id='text' label='New Text' variant='outlined' multiline error={false} helperText={"Current Text:" + state.text} sx={{ width: '92%', marginTop: 3 }} onChange={e => setText(e.target.value)} />
         <TextField id='rating' label='New Rating' variant='outlined' multiline error={false} helperText={"Current Rating:" + state.rating} sx={{ width: '92%', marginTop: 3 }} onChange={e => setRating(e.target.value)} />
         <Typography variant='p' component='div' sx={{ marginTop: 3, color: 'whitesmoke' }}>*on submit, a field that hasn't been changed will retain the current value</Typography>

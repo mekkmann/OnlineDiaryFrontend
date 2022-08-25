@@ -54,7 +54,7 @@ const BookEntries = () => {
   useEffect(() => {
     entriesProtected();
   }, []);
-  
+
   if (entryList.length === 0) {
 
     return (
@@ -88,7 +88,6 @@ if (entryList.length > 0) {
   return (
     <Container maxWidth='md' >
     <Grid2 container justifyContent='center' sx={{ marginBottom: 5 }} >
-      <FormModal/>
 
       <Grid2 xs={12} sx={{ paddingTop: 5 }} display='flex' justifyContent='center'>
         <Typography variant='h3' component={'div'} >Entries for: {state.book.title}</Typography>

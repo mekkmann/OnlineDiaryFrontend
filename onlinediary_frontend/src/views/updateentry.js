@@ -58,7 +58,7 @@ const UpdateEntry = () => {
       TodaysRating: rating,
       UserId: user.family_name,
     }
-    if (!isDescriptionError() && !isTitleError()) {
+    if (!isTextError() && !isTitleError()) {
       UpdateBook(newBook);
 
       navigate(-1);
@@ -77,13 +77,13 @@ const UpdateEntry = () => {
       return false;
     }
   }
-  let descriptionErrorText = '';
-  const isDescriptionError = () => {
-    if (description.length === 0) {
-      descriptionErrorText = 'Please describe this book'
+  let textErrorText = '';
+  const isTextError = () => {
+    if (text.length === 0) {
+      textErrorText = 'Please describe this book'
       return true;
     } else {
-      descriptionErrorText = '';
+      textErrorText = '';
       return false;
     }
   }
@@ -99,7 +99,7 @@ const UpdateEntry = () => {
   }
 
   const isOpen = () => {
-    if (isDescriptionError || isTitleError || isRatingError) {
+    if (isTextError || isTitleError || isRatingError) {
       setOpen(true);
     }
   }
@@ -110,7 +110,7 @@ const UpdateEntry = () => {
     <Container maxWidth='sm' sx={{ textAlign: 'center' }}>
       <FormModal open={open} handleClose={handleClose} />
 
-      <Typography variant='h3' component='div' sx={{ marginTop: 5 }}>Add a New Book</Typography>
+      <Typography variant='h3' component='div' sx={{ marginTop: 5 }}>Update Entry</Typography>
       <Card sx={{
         width: '100%',
         height: 'auto',
@@ -121,8 +121,8 @@ const UpdateEntry = () => {
       }}>
 
         <TextField id='title' label='New Title' variant='outlined' sx={{ width: '92%', marginTop: 3 }} error={isTitleError()} helperText={"Current title: " + state.title} onChange={e => setTitle(e.target.value)} />
-        <TextField id='text' label='New Text' variant='outlined' multiline error={isDescriptionError()} helperText={"Current Text:" + state.text} sx={{ width: '92%', marginTop: 3 }} onChange={e => setText(e.target.value)} />
-        <TextField id='rating' label='New Rating' variant='outlined' multiline error={isDescriptionError()} helperText={"Current Rating:" + state.rating} sx={{ width: '92%', marginTop: 3 }} onChange={e => setRating(e.target.value)} />
+        <TextField id='text' label='New Text' variant='outlined' multiline error={isTextError()} helperText={"Current Text:" + state.text} sx={{ width: '92%', marginTop: 3 }} onChange={e => setText(e.target.value)} />
+        <TextField id='rating' label='New Rating' variant='outlined' multiline error={isRatingError()} helperText={"Current Rating:" + state.rating} sx={{ width: '92%', marginTop: 3 }} onChange={e => setRating(e.target.value)} />
 
         <ThemeProvider theme={ColorTheme}>
           <Button variant='outlined' color='primary' onClick={() => handleSubmit()} sx={{ marginTop: 3 }}>Add Book</Button>

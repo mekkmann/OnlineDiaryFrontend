@@ -20,6 +20,9 @@ const UpdateEntry = () => {
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
   const [rating, setRating] = useState('');
+  
+  const location = useLocation();
+  const { state } = location;
 
   const serverUrl = process.env.REACT_APP_SERVER_URL;
 
@@ -30,7 +33,7 @@ const UpdateEntry = () => {
     const token = await getAccessTokenSilently();
     const body = JSON.stringify(newBook);
     await fetch(
-      `${serverUrl}/api/BookEntry/asd?title=asd&text=asd&rating=asd`,
+      `${serverUrl}/api/BookEntry/${state.id}?title=${title}&text=${text}&rating=${rating}`,
       {
         method: 'PUT',
         mode: 'cors',
@@ -103,8 +106,6 @@ const UpdateEntry = () => {
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
 
-  const location = useLocation();
-  const { state } = location;
   return (
     <Container maxWidth='sm' sx={{ textAlign: 'center' }}>
       <FormModal open={open} handleClose={handleClose} />

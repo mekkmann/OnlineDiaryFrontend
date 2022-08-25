@@ -29,7 +29,7 @@ const UpdateBook = () => {
     const token = await getAccessTokenSilently();
     const body = JSON.stringify(newBook);
     await fetch(
-      `${serverUrl}/api/Book/${user.family_name}/${state.id}?title=${title}`,
+      `${serverUrl}/api/Book/${user.family_name}/${state.id}?title=${title}&description=${description}`,
       {
         method: 'PUT',
         mode: 'cors',

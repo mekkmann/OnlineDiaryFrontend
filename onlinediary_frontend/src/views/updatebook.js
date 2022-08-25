@@ -109,7 +109,7 @@ const UpdateBook = () => {
 
         <TextField id='title' label='New Title' variant='outlined' sx={{ width: '92%', marginTop: 3 }} error={false} helperText={"Current title: " + state.title} onChange={e => setTitle(e.target.value)} />
         <TextField id='title' label='New Description' variant='outlined' multiline error={false} helperText={"Current Description:" + state.description} sx={{ width: '92%', marginTop: 3 }} onChange={e => setDescription(e.target.value)} />
-        <Typography variant='p' component='div' sx={{ marginTop: 3, color: 'whitesmoke' }}>*on submit, a field that hasn't been changed will retain the current value</Typography>
+        <Typography variant='p' component='div' sx={{ marginTop: 3, color: '#3a3a3a' }}>*a field that hasn't been altered will retain the current value</Typography>
         <ThemeProvider theme={ColorTheme}>
           <Button variant='outlined' color='primary' onClick={() => handleSubmit()} sx={{ marginTop: 3 }}>Update</Button>
         </ThemeProvider>

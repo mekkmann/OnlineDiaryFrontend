@@ -55,13 +55,14 @@ const UpdateEntry = () => {
     console.log(title +"::::"+state.title);
     console.log(text +"::::"+state.text);
     console.log(rating +"::::"+state.rating);
-    if (title.length === 0) {
+    console.log(title);
+    if (title.length === undefined) {
       setTitle(state.title);
     }
-    if (text.length === 0) {
+    if (text.length === undefined) {
       setText(state.text);
     }
-    if (rating.length === 0) {
+    if (rating.length === undefined) {
       setRating(state.rating);
     }
     console.log("After");

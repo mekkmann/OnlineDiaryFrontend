@@ -31,7 +31,7 @@ const BookEntries = () => {
   const entriesProtected = async () => {
     try {
       const token = await getAccessTokenSilently();
-      await delay(1000);
+      await delay(500);
       const response = await fetch(
         `${serverUrl}/api/BookEntry/${state.id}`,
         {
@@ -87,6 +87,8 @@ const BookEntries = () => {
         <Grid2 xs={12} sx={{ paddingTop: 5 }} display='flex' justifyContent='center'>
           <Typography variant='h5' component={'div'} >Why not add an entry while you're here?</Typography>
         </Grid2>
+
+        <Loading/>
 
       </Grid2>
     </Container>

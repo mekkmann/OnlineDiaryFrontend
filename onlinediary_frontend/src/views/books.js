@@ -21,7 +21,7 @@ const Books = () => {
   const delay = ms => new Promise(res => setTimeout(res, ms));
 
   const booksProtected = async () => {
-    await delay(1000);
+    await delay(500);
     try {
       const token = await getAccessTokenSilently();
 
@@ -68,6 +68,8 @@ const Books = () => {
           <Grid2 xs={12} sx={{ paddingTop: 5 }} display='flex' justifyContent='center'>
             <Typography variant='h4' component={'div'} >No Diaries yet, add one?</Typography>
           </Grid2>
+
+          <Loading />
 
 
 

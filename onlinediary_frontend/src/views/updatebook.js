@@ -49,12 +49,6 @@ const UpdateBook = () => {
 
   const navigate = useNavigate();
   const handleSubmit = () => {
-    if (title.length === 0) {
-      setTitle(state.title);
-    }
-    if (description.length === 0) {
-      setDescription(state.description);
-    }
 
     const newBook = {
       Title: title,

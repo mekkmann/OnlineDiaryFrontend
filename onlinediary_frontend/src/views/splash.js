@@ -124,7 +124,6 @@ const Splash = () => {
       //     </Grid2>
       //   </Grid2>
       // </Container>
-      navigate
     };
 
 

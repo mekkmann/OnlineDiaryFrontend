@@ -48,10 +48,10 @@ const UpdateBook = () => {
   const navigate = useNavigate();
   const handleSubmit = () => {
     if (title.length === 0) {
-      title = state.title;
+      setTitle(state.title);
     }
     if (description.length === 0) {
-      description = state.description;
+      setDescription(state.description);
     }
 
     const newBook = {
@@ -89,13 +89,13 @@ const UpdateBook = () => {
     }
   }
 
-  const isOpen = () => {
-    if (isDescriptionError || isTitleError) {
-      setOpen(true);
-    }
-  }
-  const [open, setOpen] = useState(false);
-  const handleClose = () => setOpen(false);
+  // const isOpen = () => {
+  //   if (isDescriptionError || isTitleError) {
+  //     setOpen(true);
+  //   }
+  // }
+  // const [open, setOpen] = useState(false);
+  // const handleClose = () => setOpen(false);
 
   const location = useLocation();
   const { state } = location;

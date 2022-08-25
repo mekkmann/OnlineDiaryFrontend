@@ -52,13 +52,13 @@ const UpdateEntry = () => {
   const navigate = useNavigate();
   const handleSubmit = () => {
     if (title.length === 0) {
-      title = state.title;
+      setTitle(state.title);
     }
     if (text.length === 0) {
-      text = state.text;
+      setText(state.text);
     }
     if (rating.length === 0) {
-      rating = state.rating;
+      setRating(state.rating);
     }
 
     const newBook = {

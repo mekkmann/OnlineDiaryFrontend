@@ -18,8 +18,10 @@ const Books = () => {
   const { getAccessTokenSilently, user } = useAuth0();
 
   const [bookList, setBookList] = useState([]);
+  const delay = ms => new Promise(res => setTimeout(res, ms));
 
   const booksProtected = async () => {
+    await delay(1000);
     try {
       const token = await getAccessTokenSilently();
 

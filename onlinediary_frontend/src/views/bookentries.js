@@ -27,11 +27,11 @@ const BookEntries = () => {
   const { getAccessTokenSilently } = useAuth0();
 
   const [entryList, setEntryList] = useState([]);
-
+  const delay = ms => new Promise(res => setTimeout(res, ms));
   const entriesProtected = async () => {
     try {
       const token = await getAccessTokenSilently();
-
+      await delay(1000);
       const response = await fetch(
         `${serverUrl}/api/BookEntry/${state.id}`,
         {

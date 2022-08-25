@@ -6,7 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 import { Card, Typography, Button } from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
-
+import UpdateEntryButton from './updateentrybutton';
 const EntryCard = ({ entry, setEntryList, entryList }) => {
     const { getAccessTokenSilently } = useAuth0();
     const serverUrl = process.env.REACT_APP_SERVER_URL;
@@ -52,6 +52,7 @@ const EntryCard = ({ entry, setEntryList, entryList }) => {
                 <br />
                 <Typography variant='p' component='div'>Todays rating: {entry.todaysRating}/10</Typography>
                 <br />
+                <UpdateEntryButton entry={entry}/>
                 <Button variant='contained' color='error' onClick={() => deleteEntry()}>Delete Entry</Button>
             </Card>
 

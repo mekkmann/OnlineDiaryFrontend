@@ -83,9 +83,9 @@ const UpdateEntry = () => {
   //     return false;
   //   }
   // }
-  let ratingErrorText = '';
+  let ratingErrorText = "Current Text: " + state.text;
   const isRatingError = () => {
-    if (isNaN(rating) || rating > 10 || rating < 1 ) {
+    if (isNaN(rating) || rating > 10 || rating < 1 || rating.length > 2 ) {
       ratingErrorText = 'Please choose a number between 1-10'
       return true;
     } else {

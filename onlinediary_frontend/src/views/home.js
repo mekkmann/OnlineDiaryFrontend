@@ -33,7 +33,7 @@ const Home = () => {
     setSecondary(!secondary);
   }
   return (
-    <Container maxWidth='md' >
+    <Container maxWidth='md' sx={{marginBottom: 5}}>
         <Grid2 container justifyContent={"center"} sx={{ marginBottom: 5 }} >
 
           <Grid2 xs={'auto'} sx={{ paddingTop: 5 }} display='flex' justifyContent='center' >

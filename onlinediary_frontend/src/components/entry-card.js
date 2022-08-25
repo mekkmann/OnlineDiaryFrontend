@@ -9,7 +9,7 @@ import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 
 const EntryCard = ({ entry, setEntryList, entryList }) => {
     const { getAccessTokenSilently } = useAuth0();
-    // const navigate = useNavigate();
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
 
     const deleteEntry = async () => {
         let success = false;
@@ -17,7 +17,7 @@ const EntryCard = ({ entry, setEntryList, entryList }) => {
             const token = await getAccessTokenSilently();
 
             await fetch(
-                `https://localhost:7281/api/BookEntry/${entry.id}`,
+                `${serverUrl}/api/BookEntry/${entry.id}`,
                 {
                     method: 'DELETE',
                     mode: 'cors',

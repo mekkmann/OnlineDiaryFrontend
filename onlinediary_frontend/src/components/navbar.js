@@ -40,7 +40,6 @@ const Navbar = () => {
                     </Stack>
 
                     <Stack direction="row" spacing={5} sx={{ width: "35%" }} alignSelf={"center"} justifyContent={"flex-end"}>
-                        {/* NO NAME IF USER ISN'T AUTHENTICATED */}
                         <SignUpButton />
                         <AuthNav />
                     </Stack>
@@ -51,7 +50,7 @@ const Navbar = () => {
     };
 
     if (isAuthenticated) {
-        const { given_name, picture } = user;
+        const { picture } = user;
         return (
             <AppBar position="static" sx={{ bgcolor: "#FFFFFF", paddingLeft: 3, paddingRight: 3 }}>
                 <Stack direction="row">
@@ -72,11 +71,10 @@ const Navbar = () => {
                     <Stack direction="row" spacing={5} alignSelf={"center"} justifyContent={"center"} sx={{ width: "30%" }} >
                         <HomeButton />
                         <BooksButton />
-                        <ProfileButton />
+                        {/* <ProfileButton /> */}
                     </Stack>
 
                     <Stack direction="row" spacing={5} sx={{ width: "35%" }} alignSelf={"center"} alignItems={"center"} justifyContent={"flex-end"}>
-                        <Typography variant="h6" component="div" sx={{ color: "#000000" }}>{given_name.split(' ')[0]}</Typography>
                         <Avatar alt='User Profile Picture' src={picture} />
                         <AuthNav />
                     </Stack>

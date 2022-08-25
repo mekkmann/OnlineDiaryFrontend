@@ -24,8 +24,8 @@ const Books = () => {
       const token = await getAccessTokenSilently();
 
       const response = await fetch(
-        // `${serverUrl}/api/Book/${user.family_name}`,
-        `https://onlinediarydatabaseapi.azurewebsites.net/api/Book/${user.family_name}`,
+        `${serverUrl}/api/Book/${user.family_name}`,
+        // `https://onlinediarydatabaseapi.azurewebsites.net/api/Book/${user.family_name}`,
         // 'https://onlinediarydatabaseapi.azurewebsites.net/api/Book/public-OnlyGivesYouOne',
         {
           method: 'GET',

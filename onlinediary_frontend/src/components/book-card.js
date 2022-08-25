@@ -5,16 +5,19 @@ import BookEntriesButton from './bookentry-button';
 import { Button, Card, Typography } from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import { useAuth0 } from '@auth0/auth0-react';
+import UpdateButton from './updatebutton';
+
 
 const BookCard = ({ book, bookList, setBookList }) => {
     const { getAccessTokenSilently } = useAuth0();
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
     const deleteBook = async () => {
         let success = false;
         try {
             const token = await getAccessTokenSilently();
 
             await fetch(
-                `https://localhost:7281/api/Book/${book.id}`,
+                `${serverUrl}/api/Book/${book.id}`,
                 {
                     method: 'DELETE',
                     mode: 'cors',
@@ -47,6 +50,7 @@ const BookCard = ({ book, bookList, setBookList }) => {
                 <Typography variant='p' component='div'>{book.description}</Typography>
                 <br />
                 <BookEntriesButton book={book} />
+                <UpdateButton book={book} />
                 <Button variant='contained' color='error' onClick={() => deleteBook()}>Delete book</Button>
             </Card>
 

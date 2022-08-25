@@ -24,7 +24,12 @@ const Home = () => {
   const [secondary, setSecondary] = useState(false);
 
   if (isLoading) {
-    return <Loading />;
+    // return <Loading />;
+    return (
+      <Grid2 xs={'auto'} sx={{ paddingTop: 5 }} display='flex' justifyContent='center' >
+        <Loading/>
+      </Grid2>
+    );
   }
   let expandOrShrink = "";
   if (secondary) expandOrShrink = "Shrink";
@@ -33,7 +38,7 @@ const Home = () => {
     setSecondary(!secondary);
   }
   return (
-    <Container maxWidth='md' sx={{marginBottom: 5}}>
+    <Container maxWidth='md' >
         <Grid2 container justifyContent={"center"} sx={{ marginBottom: 5 }} >
 
           <Grid2 xs={'auto'} sx={{ paddingTop: 5 }} display='flex' justifyContent='center' >

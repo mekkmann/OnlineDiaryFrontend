@@ -36,7 +36,8 @@ const Splash = () => {
     }
     // for authenticated
     if (isAuthenticated) {
-      navigate({to: '/home'});
+      navigate('/home');
+      return 0;
       // return (
       //   <div>
       //     <h1>PHSplashPage</h1>

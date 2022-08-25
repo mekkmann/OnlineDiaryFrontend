@@ -59,13 +59,9 @@ const UpdateBook = () => {
       Description: description,
       UserId: user.family_name,
     }
-    if (!isDescriptionError() && !isTitleError()) {
       UpdateBook(newBook);
 
       navigate(-1);
-    } else {
-      isOpen();
-    }
 
   }
   let titleErrorText = '';

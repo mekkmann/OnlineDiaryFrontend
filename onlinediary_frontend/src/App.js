@@ -13,6 +13,7 @@ import Bookentries from './views/bookentries';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import UpdateBook from './views/updatebook';
+import UpdateEntry from './views/updateentry';
 
 import './App.css';
 
@@ -44,6 +45,8 @@ function App() {
           <Route path='/bookEntries' element={<Bookentries />} /> {/* PROTECTED ROUTE */}
 
           <Route path='/addEntries' element={<AddEntry />} /> {/* PROTECTED ROUTE */}
+
+          <Route path='/updateEntry' element={<UpdateEntry />} /> {/* PROTECTED ROUTE */}
         </Routes>
         <Footer className='footer' />
       </div>

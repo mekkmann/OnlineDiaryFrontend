@@ -12,7 +12,7 @@ const UpdateEntryButton = ({entry}) => {
     return (
         <ThemeProvider theme={ColorTheme}>
             <NavLink to={{pathname :"/updateBook"}}
-                    state={{id: entry.id, text: entry.text, rating: entry.todaysRating}} >
+                    state={{id: entry.id, title: entry.title, text: entry.text, rating: entry.todaysRating}} >
                 <Button variant="outlined" color="primary" sx={{textDecoration: "none"}}>Update</Button>
             </NavLink>
         </ThemeProvider>

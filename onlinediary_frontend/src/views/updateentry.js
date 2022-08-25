@@ -51,6 +51,10 @@ const UpdateEntry = () => {
 
   const navigate = useNavigate();
   const handleSubmit = () => {
+    console.log("Before");
+    console.log(title +"::::"+state.title);
+    console.log(text +"::::"+state.text);
+    console.log(rating +"::::"+state.rating);
     if (title.length === 0) {
       setTitle(state.title);
     }
@@ -60,6 +64,10 @@ const UpdateEntry = () => {
     if (rating.length === 0) {
       setRating(state.rating);
     }
+    console.log("After");
+    console.log(title +"::::"+state.title);
+    console.log(text +"::::"+state.text);
+    console.log(rating +"::::"+state.rating);
 
     const newBook = {
       Title: title,

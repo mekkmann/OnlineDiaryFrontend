@@ -16,6 +16,8 @@ import { Container, Typography, TextField, Button, Card } from '@mui/material';
 // import FormModal from '../components/form-modal';
 
 const UpdateBook = () => {
+  const location = useLocation();
+  const { state } = location;
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -93,8 +95,6 @@ const UpdateBook = () => {
   // const [open, setOpen] = useState(false);
   // const handleClose = () => setOpen(false);
 
-  const location = useLocation();
-  const { state } = location;
   return (
     <Container maxWidth='sm' sx={{ textAlign: 'center' }}>
       {/* <FormModal open={open} handleClose={handleClose} /> */}

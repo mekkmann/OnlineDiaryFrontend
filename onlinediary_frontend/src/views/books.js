@@ -69,9 +69,9 @@ const Books = () => {
             <Typography variant='h4' component={'div'} >No Diaries yet, add one?</Typography>
           </Grid2>
 
-          <Loading />
-
-
+          <Grid2 xs={12} sx={{ p: 5 }} display='flex' justifyContent='center'>
+            <Loading />
+          </Grid2>
 
         </Grid2>
       </Container>

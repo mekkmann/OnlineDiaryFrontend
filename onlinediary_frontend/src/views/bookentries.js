@@ -87,8 +87,9 @@ const BookEntries = () => {
         <Grid2 xs={12} sx={{ paddingTop: 5 }} display='flex' justifyContent='center'>
           <Typography variant='h5' component={'div'} >Why not add an entry while you're here?</Typography>
         </Grid2>
-
-        <Loading/>
+        <Grid2 xs={12} sx={{ p: 5 }} display='flex' justifyContent='center'>
+          <Loading/>
+        </Grid2>
 
       </Grid2>
     </Container>

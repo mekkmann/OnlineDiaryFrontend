@@ -95,9 +95,9 @@ const UpdateBook = () => {
   const { state } = location;
   return (
     <Container maxWidth='sm' sx={{ textAlign: 'center' }}>
-      <FormModal open={open} handleClose={handleClose} />
+      {/* <FormModal open={open} handleClose={handleClose} /> */}
 
-      <Typography variant='h3' component='div' sx={{ marginTop: 5 }}>Add a New Book</Typography>
+      <Typography variant='h3' component='div' sx={{ marginTop: 5 }}>Update Book</Typography>
       <Card sx={{
         width: '100%',
         height: 'auto',
@@ -107,11 +107,11 @@ const UpdateBook = () => {
 
       }}>
 
-        <TextField id='title' label='New Title' variant='outlined' sx={{ width: '92%', marginTop: 3 }} error={isTitleError()} helperText={"Current title: " + state.title} onChange={e => setTitle(e.target.value)} />
-        <TextField id='title' label='New Description' variant='outlined' multiline error={isDescriptionError()} helperText={"Current Description:" + state.description} sx={{ width: '92%', marginTop: 3 }} onChange={e => setDescription(e.target.value)} />
-
+        <TextField id='title' label='New Title' variant='outlined' sx={{ width: '92%', marginTop: 3 }} error={false} helperText={"Current title: " + state.title} onChange={e => setTitle(e.target.value)} />
+        <TextField id='title' label='New Description' variant='outlined' multiline error={false} helperText={"Current Description:" + state.description} sx={{ width: '92%', marginTop: 3 }} onChange={e => setDescription(e.target.value)} />
+        <Typography variant='p' component='div' sx={{ marginTop: 3, color: 'whitesmoke' }}>*on submit, a field that hasn't been changed will retain the current value</Typography>
         <ThemeProvider theme={ColorTheme}>
-          <Button variant='outlined' color='primary' onClick={() => handleSubmit()} sx={{ marginTop: 3 }}>Add Book</Button>
+          <Button variant='outlined' color='primary' onClick={() => handleSubmit()} sx={{ marginTop: 3 }}>Update</Button>
         </ThemeProvider>
 
       </Card>

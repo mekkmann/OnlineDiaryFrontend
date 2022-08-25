@@ -58,57 +58,53 @@ const UpdateEntry = () => {
       TodaysRating: rating,
       UserId: user.family_name,
     }
-    if (!isTextError() && !isTitleError()) {
       UpdateBook(newBook);
 
       navigate(-1);
-    } else {
-      isOpen();
-    }
 
   }
-  let titleErrorText = '';
-  const isTitleError = () => {
-    if (title.length === 0) {
-      titleErrorText = 'Please choose a title'
-      return true;
-    } else {
-      titleErrorText = '';
-      return false;
-    }
-  }
-  let textErrorText = '';
-  const isTextError = () => {
-    if (text.length === 0) {
-      textErrorText = 'Please describe this book'
-      return true;
-    } else {
-      textErrorText = '';
-      return false;
-    }
-  }
-  let ratingErrorText = '';
-  const isRatingError = () => {
-    if (isNaN(rating) || rating > 10 || rating < 1 || rating.length === 0) {
-      ratingErrorText = 'Please choose a number between 1-10'
-      return true;
-    } else {
-      ratingErrorText = '';
-      return false;
-    }
-  }
+  // let titleErrorText = '';
+  // const isTitleError = () => {
+  //   if (title.length === 0) {
+  //     titleErrorText = 'Please choose a title'
+  //     return true;
+  //   } else {
+  //     titleErrorText = '';
+  //     return false;
+  //   }
+  // }
+  // let textErrorText = '';
+  // const isTextError = () => {
+  //   if (text.length === 0) {
+  //     textErrorText = 'Please describe this book'
+  //     return true;
+  //   } else {
+  //     textErrorText = '';
+  //     return false;
+  //   }
+  // }
+  // let ratingErrorText = '';
+  // const isRatingError = () => {
+  //   if (isNaN(rating) || rating > 10 || rating < 1 || rating.length === 0) {
+  //     ratingErrorText = 'Please choose a number between 1-10'
+  //     return true;
+  //   } else {
+  //     ratingErrorText = '';
+  //     return false;
+  //   }
+  // }
 
-  const isOpen = () => {
-    if (isTextError || isTitleError || isRatingError) {
-      setOpen(true);
-    }
-  }
-  const [open, setOpen] = useState(false);
-  const handleClose = () => setOpen(false);
+  // const isOpen = () => {
+  //   if (isTextError || isTitleError || isRatingError) {
+  //     setOpen(true);
+  //   }
+  // }
+  // const [open, setOpen] = useState(false);
+  // const handleClose = () => setOpen(false);
 
   return (
     <Container maxWidth='sm' sx={{ textAlign: 'center' }}>
-      <FormModal open={open} handleClose={handleClose} />
+      {/* <FormModal open={open} handleClose={handleClose} /> */}
 
       <Typography variant='h3' component='div' sx={{ marginTop: 5 }}>Update Entry</Typography>
       <Card sx={{
@@ -121,11 +117,12 @@ const UpdateEntry = () => {
       }}>
 
         <TextField id='title' label='New Title' variant='outlined' sx={{ width: '92%', marginTop: 3 }} error={isTitleError()} helperText={"Current title: " + state.title} onChange={e => setTitle(e.target.value)} />
-        <TextField id='text' label='New Text' variant='outlined' multiline error={isTextError()} helperText={"Current Text:" + state.text} sx={{ width: '92%', marginTop: 3 }} onChange={e => setText(e.target.value)} />
-        <TextField id='rating' label='New Rating' variant='outlined' multiline error={isRatingError()} helperText={"Current Rating:" + state.rating} sx={{ width: '92%', marginTop: 3 }} onChange={e => setRating(e.target.value)} />
+        <TextField id='text' label='New Text' variant='outlined' multiline error={false} helperText={"Current Text:" + state.text} sx={{ width: '92%', marginTop: 3 }} onChange={e => setText(e.target.value)} />
+        <TextField id='rating' label='New Rating' variant='outlined' multiline error={false} helperText={"Current Rating:" + state.rating} sx={{ width: '92%', marginTop: 3 }} onChange={e => setRating(e.target.value)} />
+        <Typography variant='p' component='div' sx={{ marginTop: 3, color: 'whitesmoke' }}>*on submit, a field that hasn't been changed will retain the current value</Typography>
 
         <ThemeProvider theme={ColorTheme}>
-          <Button variant='outlined' color='primary' onClick={() => handleSubmit()} sx={{ marginTop: 3 }}>Add Book</Button>
+          <Button variant='outlined' color='primary' onClick={() => handleSubmit()} sx={{ marginTop: 3 }}>Update</Button>
         </ThemeProvider>
 
       </Card>

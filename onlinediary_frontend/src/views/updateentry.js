@@ -51,24 +51,6 @@ const UpdateEntry = () => {
 
   const navigate = useNavigate();
   const handleSubmit = () => {
-    console.log("Before");
-    console.log(title +"::::"+state.title);
-    console.log(text +"::::"+state.text);
-    console.log(rating +"::::"+state.rating);
-    console.log(title);
-    if (title === '') {
-      setTitle(state.title);
-    }
-    if (text === '') {
-      setText(state.text);
-    }
-    if (rating === '') {
-      setRating(state.rating);
-    }
-    console.log("After");
-    console.log(title +"::::"+state.title);
-    console.log(text +"::::"+state.text);
-    console.log(rating +"::::"+state.rating);
 
     const newBook = {
       Title: title,

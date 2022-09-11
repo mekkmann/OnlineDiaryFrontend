@@ -1,7 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react';
 
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import Grid2 from '@mui/material/Unstable_Grid2';
 import { Button, Container, Typography, Card } from '@mui/material';
@@ -20,14 +19,12 @@ const Splash = () => {
 
   const { isLoading, isAuthenticated } = useAuth0();
   const [secondary, setSecondary] = useState(false);
-  const navigate = useNavigate()
   {
     // for both
     if (isLoading) {
       return <Loading />;
     }
 
-    // for both
     let expandOrShrink = "";
     if (secondary) expandOrShrink = "Shrink";
     if (!secondary) expandOrShrink = "Expand";
@@ -36,15 +33,6 @@ const Splash = () => {
     }
     // for authenticated
     if (isAuthenticated) {
-      // return (
-      //   <div>
-      //     <h1>PHSplashPage</h1>
-
-      //     <h2>Authenticated splash page</h2>
-      //     <h2>Will navigate to url.com/home in release</h2>
-      //     <h2>Don't care about this too much</h2>
-      //   </div>
-      // );
       return (
         <Container maxWidth='md' >
           <Grid2 container justifyContent={"center"} sx={{ marginBottom: 5 }} >

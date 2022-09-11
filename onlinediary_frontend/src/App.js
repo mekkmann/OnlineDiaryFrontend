@@ -14,6 +14,7 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import UpdateBook from './views/updatebook';
 import UpdateEntry from './views/updateentry';
+import HeaderPSA from './components/header-psa';
 
 import './App.css';
 
@@ -28,6 +29,7 @@ function App() {
   return (
     <div id='app'>
       <Navbar />
+      <HeaderPSA/>
       <div id='content-wrap'>
         <Routes className='content'>
           <Route path='/' exact element={<Splash />} /> {/* PUBLIC ROUTE */}

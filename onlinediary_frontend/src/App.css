@@ -10,6 +10,13 @@ a {
   position: relative;
   min-height: 100vh;
 }
+.header-psa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #c3c3c3;
+  padding: 1rem 0;
+}
 
 .footer {
   position: absolute;

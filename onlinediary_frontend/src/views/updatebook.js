@@ -60,26 +60,26 @@ const UpdateBook = () => {
       navigate(-1);
 
   }
-  let titleErrorText = '';
-  const isTitleError = () => {
-    if (title.length === 0) {
-      titleErrorText = 'Please choose a title'
-      return true;
-    } else {
-      titleErrorText = '';
-      return false;
-    }
-  }
-  let descriptionErrorText = '';
-  const isDescriptionError = () => {
-    if (description.length === 0) {
-      descriptionErrorText = 'Please describe this book'
-      return true;
-    } else {
-      descriptionErrorText = '';
-      return false;
-    }
-  }
+  // let titleErrorText = '';
+  // const isTitleError = () => {
+  //   if (title.length === 0) {
+  //     titleErrorText = 'Please choose a title'
+  //     return true;
+  //   } else {
+  //     titleErrorText = '';
+  //     return false;
+  //   }
+  // }
+  // let descriptionErrorText = '';
+  // const isDescriptionError = () => {
+  //   if (description.length === 0) {
+  //     descriptionErrorText = 'Please describe this book'
+  //     return true;
+  //   } else {
+  //     descriptionErrorText = '';
+  //     return false;
+  //   }
+  // }
 
   // const isOpen = () => {
   //   if (isDescriptionError || isTitleError) {
